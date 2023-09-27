@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="titre_annonce">
+<h1> {{annonce['titre']}} </h1><br>
+</div>
+
+<div class="annonce">
+<h2 class="auteur_annonce">{{ annonce['utilisateur'] }}</h2><br>
+<span class="email_auteur">{{ annonce['email'] }}</span><br>
+<span class="telephone">{{ annonce['telephone'] }}</span><br>
+<span class="nom_region">{{ annonce['nomRegion'] }}</span><br>
+<span class="ville">{{ annonce['ville'] }}</span><br>
+<span class="nom_categorie">{{ annonce['nomCategorie'] }}</span><br>
+<span class="code_postal">{{ annonce['codePostal'] }}</span><br>
+<span class="description">{{ annonce['description'] }}</span><br>
+</div> 
+
+{% endblock %}

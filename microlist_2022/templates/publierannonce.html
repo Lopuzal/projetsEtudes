@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<section id="postDisplay">
+    <form id="postSection" method="post" action="">
+        <input type="text" name="titre" placeholder="Titre" maxlength="40" required/><br />
+        <textarea name="description" placeholder="Description" maxlength="500" rows="10" cols="50"></textarea><br />
+        <input type="number" name="prix" placeholder="Prix" maxlength="11"/><br />
+        <input type="text" name="codePostal" placeholder="Code Postal" maxlength="5" required/></span><br />
+        <input type="text" name="ville" placeholder="Ville" maxlength="40" required/></span><br />
+        <select name="idCategorie" required>
+                <option value=>-Catégories-</option>
+                {%for categorie in categories%}
+                    <option value="{{categorie['idCategorie']}}">{{categorie['nomCategorie']}}</option>
+                {%endfor%}
+        </select>
+        <select name="idRegion" required>
+                <option value=>-Régions-</option>
+                {%for region in regions%}
+                    <option value="{{region['idRegion']}}">{{region['nomRegion']}}</option>
+                {%endfor%}
+        </select><br />
+        <input type="submit" value="Publier">
+    </form>
+</section>
+
+{% endblock %}

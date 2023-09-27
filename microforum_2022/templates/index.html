@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<div class="topics">
+{% for topic in topics %}
+<div class="topic">
+<a class="topic_name" href="/viewposts?idtopic={{topic['id']}}">{{ topic['topicname'] }}</a><br>
+<span class="topic_author">{{ topic['author'] }}</span><br>
+</div>
+{% endfor %}
+</div>
+
+{% if session['username'] is defined %}
+<div class="create-topic-form">
+<form action="/" method="post" class="formulaire_post">
+    <label for="topicname">Titre du sujet: </label>
+    <input type="text" name="topicname" id="topicname" required><br>
+    <textarea name="content" rows="10" cols="50"></textarea><br>
+    <input type="submit" value="Poster"><br>
+</form>
+</div>
+{% endif %}
+
+{% endblock %}

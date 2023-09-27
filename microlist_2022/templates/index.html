@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<section id="rechercheSection">
+    <form action="" method="get">
+    Rechercher: <input type="text" name="titre" value={{recherche}}> <br />
+        <ul>
+            <li>
+                <select name="idcat">
+                    <option value=>-Catégories-</option>
+                    {%for categorie in categories%}
+                        <option value="{{categorie['idCategorie']}}">{{categorie['nomCategorie']}}</option>
+                    {%endfor%}
+                </select> 
+            </li>
+            <li>
+                <select name="idregion">
+                    <option value=>-Régions-</option>
+                    {%for region in regions%}
+                        <option value="{{region['idRegion']}}">{{region['nomRegion']}}</option>
+                    {%endfor%}
+                </select>
+            </li>
+            <li>
+                <input type="submit" value="Rechercher" />
+            </li>
+        </ul>
+        <ul>
+            <li>
+            Trier par 
+                <select name="ordre" >
+                    <option value=>Aucun</option>
+                    <option value=0>Prix</option>
+                    <option value=1>Date</option>
+                </select>
+            </li>
+        </ul>
+    </form>
+</section>
+
+<div class="annonces">
+    {% for annonce in annonces %}
+        <div class="annonce">
+            <a class="nom_annonce" href="/voirannonce?idannonce={{annonce['idAnnonce']}}">{{ annonce['titre'] }}</a><br>
+            <span class="auteur_annonce">{{ annonce['auteur'] }}</span><br>
+        </div>
+    {% endfor %}
+</div>
+
+{% if session['utilisateur'] is defined %}
+    <div class="lien_publier_annonce">
+        <a href="/publierannonce"> Publier une annonce </a>
+    </div>
+{% endif %}
+
+{% endblock %}

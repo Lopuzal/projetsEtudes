@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/inscription" method="post" class="formulaire_inscription">
+    <label for="utilisateur">Pseudo: </label>
+    <input type="text" name="utilisateur" id="utilisateur" required>
+    <label for="mdp">Mot de passe: </label>
+    <input type="mdp" name="mdp" id="mdp" required>
+    <label for="email">Adresse email: </label>
+    <input type="email" name="email" id="email" required>
+    <label for="telephone">Téléphone: </label>
+    <input type="telephone" name="telephone" id="telephone" required>
+    <input type="submit" value="Inscription">
+  </form>
+{% endblock %}

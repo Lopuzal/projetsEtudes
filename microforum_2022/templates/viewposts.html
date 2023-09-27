@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<div class="topic-title">
+<h1> {{topicname}} </h1><br>
+</div>
+
+<div class="posts">
+{% for post in posts %}
+<div class="post">
+<h2 class="auteur_post">{{ post['user'] }}</h2><br>
+<span class="date_post">{{ post['created'] }}</span><br>
+<span class="contenu_post">{{ post['content'] }}</span><br>
+</div>
+{% endfor %}
+</div> 
+
+{% if session['username'] is defined %}
+<div class="create-post-form">
+<form action="" method="post" class="formulaire_post">
+    <label for="post">Répondre: </label>
+    <textarea name="content" rows="10" cols="50"></textarea><br>
+    <input type="submit" value="Poster"><br>
+</form>
+</div>
+{% endif %}
+
+{% endblock %}

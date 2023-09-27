@@ -1,0 +1,55 @@
+body
+{
+  padding: 30px;
+  background-color: #F2D7EE;
+}
+
+.inscription-connexion {
+  width: 15em;
+  border: 1px solid #333;
+  box-shadow: 8px 8px 5px #444;
+  padding: 8px 12px;
+  background-color: #D3BCC0;
+}
+
+.annonces {
+  margin: 0 auto;
+  width: 50em; 
+  border: 1px solid #333;
+}
+
+.annonce {
+  height: 15em;
+  border: 1px solid #333;
+  background-color: #A5668B;
+}
+
+.topics {
+  width: 50em; 
+  border: 1px solid #333;
+}
+
+.topic {
+  border: 1px solid #333;
+  background-color: #69306D;
+}
+
+.annonces a{
+  color: #F2D7EE
+}
+
+.titre_annonce {
+  margin: 0 auto;
+  width: 50em; 
+  text-align: center;
+}
+
+.auteur_annonce {
+  position: relative;
+  top: -25px
+}
+
+.date_annonce {
+  position: relative;
+  top: -55px
+}

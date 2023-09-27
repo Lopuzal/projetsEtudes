@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/inscription" method="post" class="formulaire_inscription">
+    <label for="username">Pseudo: </label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Mot de passe: </label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Inscription">
+  </form>
+{% endblock %}
